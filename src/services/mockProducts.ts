@@ -1,0 +1,85 @@
+export const productsMock = [
+  {
+    id: "1",
+    name: "Грандорф для собак",
+    category: "корма",
+    image: "/dog-food.jpg",
+    price: 1250,
+    shop: "4 лапы",
+    offers: [
+      { shop: "Зоооптторг.рф", price: 1190 },
+      { shop: "Бетховен", price: 1230 },
+    ],
+  },
+    {
+    id: "1",
+    name: "Грандорф для собак",
+    category: "корма",
+    image: "/dog-food.jpg",
+    price: 1250,
+    shop: "4 лапы",
+    offers: [
+      { shop: "Зоооптторг.рф", price: 1190 },
+      { shop: "Бетховен", price: 1230 },
+    ],
+  },
+    {
+    id: "1",
+    name: "Грандорф для собак",
+    category: "корма",
+    image: "/dog-food.jpg",
+    price: 1250,
+    shop: "4 лапы",
+    offers: [
+      { shop: "Зоооптторг.рф", price: 1190 },
+      { shop: "Бетховен", price: 1230 },
+    ],
+  },
+    {
+    id: "1",
+    name: "Грандорф для собак",
+    category: "корма",
+    image: "/dog-food.jpg",
+    price: 1250,
+    shop: "4 лапы",
+    offers: [
+      { shop: "Зоооптторг.рф", price: 1190 },
+      { shop: "Бетховен", price: 1230 },
+    ],
+  },
+    {
+    id: "1",
+    name: "Грандорф для собак",
+    category: "корма",
+    image: "/dog-food.jpg",
+    price: 1250,
+    shop: "4 лапы",
+    offers: [
+      { shop: "Зоооптторг.рф", price: 1190 },
+      { shop: "Бетховен", price: 1230 },
+    ],
+  },
+  {
+    id: "2",
+    name: "Игрушка мячик",
+    category: "игрушки и одежда",
+    image: "/ball.jpg",
+    price: 250,
+    shop: "Зоомаг",
+    offers: [
+      { shop: "4 лапы", price: 270 },
+      { shop: "Бетховен", price: 260 },
+    ],
+  },
+  {
+    id: "3",
+    name: "Ошейник антиблошиный",
+    category: "лекарства",
+    image: "/collar.jpg",
+    price: 790,
+    shop: "Бетховен",
+    offers: [
+      { shop: "Зоооптторг.рф", price: 770 },
+    ],
+  },
+]
