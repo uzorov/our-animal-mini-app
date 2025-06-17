@@ -15,7 +15,7 @@ export default {
     },
     fontFamily: {
       body: ["Tahoma", "sans-serif"],
-      heading: ["Matrix Normal", "serif"], // Условно. Придется подключить шрифт вручную, если нужен.
+      heading: ['Matrix Normal', 'serif'], // Условно. Придется подключить шрифт вручную, если нужен.
     },
   },
   plugins: [],

@@ -1,17 +1,27 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../app/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const FilterOptions = [
-    { id: "popularity", label: "По популярности" },
     { id: "priceAsc", label: "Цена по возрастанию" },
     { id: "priceDesc", label: "Цена по убыванию" },
-    { id: "rating", label: "По рейтингу" },
+    { id: "clear", label: "Сбросить фильтр" }
 ];
 
-const CatalogSearchBar = ({ cartCount }: { cartCount: number }) => {
+interface CatalogSearchBarProps {
+    search: string;
+    setSearch: (v: string) => void;
+    filter: string | null;
+    setFilter: (v: string | null) => void;
+}
+
+const CatalogSearchBar = ({ search, setSearch, filter, setFilter }: CatalogSearchBarProps) => {
+    const { cart } = useContext(CartContext);
     const [filterOpen, setFilterOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
-        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "0 8px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "0px 8px", paddingBottom: 15 }}>
             <div style={{ position: "relative", flexGrow: 1 }}>
                 <span
                     style={{
@@ -47,6 +57,8 @@ const CatalogSearchBar = ({ cartCount }: { cartCount: number }) => {
                 <input
                     type="search"
                     placeholder="Поиск по товарам"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
                     style={{
                         width: "100%",
                         padding: "8px 8px 8px 34px",
@@ -79,11 +91,12 @@ const CatalogSearchBar = ({ cartCount }: { cartCount: number }) => {
                     fontSize: 24,
                 }}
                 aria-label="Корзина"
+                onClick={() => navigate('/cart')}
             >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M3 8L5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2l2-12H3zm5 0V6a4 4 0 1 1 8 0v2" stroke="#1D5D31" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 </svg>
-                {cartCount > 0 && (
+                {cart.length > 0 && (
                     <span
                         style={{
                             position: "absolute",
@@ -101,7 +114,7 @@ const CatalogSearchBar = ({ cartCount }: { cartCount: number }) => {
                             fontWeight: "bold",
                         }}
                     >
-                        {cartCount}
+                        {cart.reduce((sum, item) => sum + (item.quantity || 1), 0)}
                     </span>
                 )}
             </button>
@@ -150,10 +163,13 @@ const CatalogSearchBar = ({ cartCount }: { cartCount: number }) => {
                                     padding: "6px 10px",
                                     cursor: "pointer",
                                     borderRadius: 4,
+                                    background: filter === opt.id || (opt.id === 'clear' && !filter) ? '#e5e5e5' : 'transparent',
+                                    fontWeight: filter === opt.id || (opt.id === 'clear' && !filter) ? 600 : 400,
                                 }}
                                 onClick={() => {
-                                    // TODO: применить сортировку
                                     setFilterOpen(false);
+                                    if (opt.id === 'clear') setFilter(null);
+                                    else setFilter(opt.id);
                                 }}
                             >
                                 {opt.label}

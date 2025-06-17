@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 
 import MenuButton from "../shared/MenuButton"
 import Logo from "../shared/Logo"
-import CatalogSearchBar from "../widgets/CatalogSearchBar"
+
 
 export const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <div className="relative px-1 sm:px-4 py-5 mb-4 flex flex-col gap-3">
+        <div className="relative px-1 sm:px-4 py-5 mb-0 flex flex-col gap-2">
             {/* Верхняя строка: кнопка меню + логотип */}
             <div className="flex justify-between items-end h-12">
                 <button onClick={() => setMenuOpen(!menuOpen)} className="self-end">
@@ -21,7 +21,6 @@ export const Header = () => {
             </div>
 
             {/* Поисковая строка с фильтрами и корзиной */}
-            <CatalogSearchBar cartCount={0} />
 
 
             {menuOpen && (

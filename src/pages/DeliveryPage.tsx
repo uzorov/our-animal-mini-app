@@ -23,13 +23,15 @@ export default function DeliveryPage() {
                 >
                     Оформить регулярную доставку
                 </button>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-darkRed font-semibold px-6">
                     Регулярная доставка - это способ любить Вашего питомца, доверив нам Ваши рутинные задачи: купить корм, лакомства, заказать лекарства, личные средства гигиены.
                 </p>
             </section>
 
-            <section className="text-sm text-gray-700">
-                Мы доставляем из любого магазина от 40 минут в удобное Вам время.
+            <section className="text-sm">
+                <span className="block text-darkRed font-extrabold uppercase px-6">
+                    Мы доставляем из любого магазина от 40 минут в удобное Вам время.
+                </span>
             </section>
         </div>
     )
