@@ -46,11 +46,11 @@ export default function CatalogPage() {
           (cat) =>
             productsByCategory[cat.key].length > 0 && (
               <div key={cat.key}>
-                <div className="text-darkRed font-bold text-lg mb-1 ml-1">{cat.label}</div>
+                <div className="text-darkRed text-lg mb-1 ml-1" style={{fontFamily: 'Bowler, \'Matrix Normal\', serif'}}>{cat.label}</div>
                 <div className="overflow-x-auto" style={{ height: 170 }}>
                   <div className="flex gap-3 pb-2" style={{ height: '100%', alignItems: 'stretch' }}>
                     {productsByCategory[cat.key].map((product) => (
-                      <ProductCard key={product.id} {...product} />
+                      <ProductCard key={product.id} {...product} price={Number(product.price)} />
                     ))}
                   </div>
                 </div>
@@ -59,11 +59,11 @@ export default function CatalogPage() {
         )}
         {otherProducts.length > 0 && (
           <div>
-            <div className="text-darkRed font-bold text-lg mb-2 ml-1">Прочее</div>
+            <div className="text-darkRed text-lg mb-2 ml-1" style={{fontFamily: 'Bowler, \'Matrix Normal\', serif'}}>Прочее</div>
             <div className="overflow-x-auto" style={{ height: 170 }}>
               <div className="flex gap-3 pb-2" style={{ height: '100%', alignItems: 'stretch' }}>
                 {otherProducts.map((product) => (
-                  <ProductCard key={product.id} {...product} />
+                  <ProductCard key={product.id} {...product} price={Number(product.price)} />
                 ))}
               </div>
             </div>

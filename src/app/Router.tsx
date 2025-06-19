@@ -6,7 +6,7 @@ import DeliveryPage from "../pages/DeliveryPage"
 
 export default function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/our-animal-mini-app">
       <Routes>
         <Route path="/" element={<CatalogPage />} />
         <Route path="/profile" element={<ProfilePage />} />

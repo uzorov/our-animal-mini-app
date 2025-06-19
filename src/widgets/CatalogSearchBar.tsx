@@ -61,14 +61,16 @@ const CatalogSearchBar = ({ search, setSearch, filter, setFilter }: CatalogSearc
                     onChange={e => setSearch(e.target.value)}
                     style={{
                         width: "100%",
+                        minWidth: 180,
                         padding: "8px 8px 8px 34px",
                         borderRadius: 9999,
-                        fontFamily: "Tahoma",
+                        fontFamily: "Bowler",
+                        fontSize: 12,
                         backgroundColor: "transparent",
                         border: "2px solid #1D5D31",
-                        color: "#000",
-                        fontWeight: 500,
+                        color: "#000"
                     }}
+                    className="placeholder:whitespace-nowrap placeholder:overflow-ellipsis placeholder:text-gray-400"
                 />
             </div>
 
@@ -129,15 +131,14 @@ const CatalogSearchBar = ({ search, setSearch, filter, setFilter }: CatalogSearc
                         backgroundColor: "transparent",
                         color: "#000",
                         cursor: "pointer",
-                        fontFamily: "Tahoma, Geneva, Verdana, sans-serif",
+                        fontFamily: "Bowler, 'Matrix Normal', serif",
                         fontWeight: 500,
                         letterSpacing: 1,
-                        minWidth: 80,
-                        maxWidth: 120,
+                        minWidth: 100,
+                        maxWidth: 135,
                     }}
-                    className="tahoma-font"
                 >
-                    ФИЛЬТРЫ
+                    Фильтры
                 </button>
                 {filterOpen && (
                     <ul

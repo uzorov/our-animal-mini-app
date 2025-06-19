@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Bowler';
+  src: url('/fonts/Bowler.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: Tahoma, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bowler', serif;
 }
 
 .input {
@@ -34,7 +45,3 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-
-/* h1, h2, h3, h4, h5, h6 {
-  font-family: 'Matrix Normal', serif;
-} */

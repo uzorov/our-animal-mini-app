@@ -9,17 +9,17 @@ export default function DeliveryPage() {
         <div className="min-h-screen bg-milk p-4">
             <Header />
 
-            <h1 className="text-xl font-bold text-primary mb-4">Доставка</h1>
+            <h1 className="text-xl text-darkRed font-bold mb-4">Доставка</h1>
 
-            <section className="mb-6">
-                <h2 className="text-md font-semibold mb-2">Выберите дату доставки:</h2>
+            <section className="mb-6"><h2 className="text-md font-semibold mb-2 text-darkRed" style={{fontFamily: 'Tahoma, Geneva, Verdana, sans-serif'}}>Отметь дни доставки:</h2>
+                
                 <Calendar selectedDate={selectedDate} onSelectDate={setSelectedDate} />
             </section>
 
             <section className="mb-6">
                 <button
-                    className="w-full py-3 bg-gray-300 text-gray-600 font-semibold rounded-xl cursor-not-allowed mb-2"
-                    disabled
+                    className={`w-full py-2 rounded-3xl font-semibold text-lg border-2 transition-colors duration-150 mb-2 ${selectedDate ? 'border-primary text-primary bg-white hover:bg-primary hover:text-white cursor-pointer' : 'bg-gray-300 text-gray-600 cursor-not-allowed'}`}
+                    disabled={!selectedDate}
                 >
                     Оформить регулярную доставку
                 </button>

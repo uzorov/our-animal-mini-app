@@ -75,7 +75,7 @@ export const Calendar = ({ selectedDate, onSelectDate }: CalendarProps) => {
         >
           ‹
         </button>
-        <span className="font-heading text-lg text-primary">
+        <span className="font-body text-xl md:text-xl font-semibold text-primary">
           {MONTHS[currentMonth]} {currentYear}
         </span>
         <button
@@ -104,7 +104,7 @@ export const Calendar = ({ selectedDate, onSelectDate }: CalendarProps) => {
                 "px-2 py-1 rounded-full border text-sm",
                 selectedDate &&
                   day.toDateString() === selectedDate.toDateString()
-                  ? "border-[#7E0D0D] text-[#7E0D0D] bg-rose-100"
+                  ? "border-primary text-primary bg-white"
                   : "border-gray-300 text-gray-700 bg-white",
                 today.toDateString() === day.toDateString() && "font-bold underline"
               )}
