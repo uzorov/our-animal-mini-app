@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# Our Animal MiniApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Мини-приложение для Telegram и Web — каталог товаров для животных, корзина, профиль пользователя и питомца, оформление доставки.
 
-Currently, two official plugins are available:
+## Возможности
+- Поиск и фильтрация товаров по цене
+- Категории товаров, подробные карточки
+- Корзина с подсчётом количества, удалением и оформлением заказа
+- Профиль пользователя и питомца (редактируемые поля)
+- Календарь для выбора даты доставки
+- Современный дизайн на React + Tailwind CSS
+- Интеграция с Telegram WebApp API
+- Адаптивная вёрстка
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Старт локально
+1. Установите зависимости:
+   ```bash
+   npm install
+   ```
+2. Запустите проект:
+   ```bash
+   npm run dev
+   ```
+3. Откройте в браузере: [http://localhost:5173/our-animal-mini-app/](http://localhost:5173/our-animal-mini-app/)
 
-## Expanding the ESLint configuration
+## Сборка и деплой на GitHub Pages
+1. В файле `vite.config.ts` должен быть указан:
+   ```js
+   base: '/our-animal-mini-app/'
+   ```
+2. Соберите проект:
+   ```bash
+   npm run build
+   ```
+3. Задеплойте на GitHub Pages:
+   ```bash
+   npm run deploy
+   ```
+   (используется пакет `gh-pages`)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Интеграция с Telegram Mini App
+- Для работы в Telegram WebApp ничего дополнительно настраивать не нужно — приложение автоматически вызывает `window.Telegram.WebApp.ready()`.
+- Для публикации в Telegram укажите ссылку на GitHub Pages в настройках BotFather.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Структура проекта
+- `src/pages/` — основные страницы (каталог, корзина, доставка, профиль)
+- `src/widgets/` — переиспользуемые компоненты (ProductCard, Calendar, Header и др.)
+- `src/app/` — роутинг, контексты
+- `src/services/` — мок-данные
+- `public/fonts/` — кастомные шрифты
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Кастомизация
+- Шрифты и цвета настраиваются в `tailwind.config.js` и `index.css`
+- Для изменения логотипа — замените файл `public/our-anim-logo.png`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Требования
+- Node.js 18+
+- npm 9+
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Контакты
+Разработчик: [uzorov](https://github.com/uzorov)
+
+---
+
+_Если возникнут вопросы по запуску или интеграции — пишите в Issues или на почту, указанную в профиле._
